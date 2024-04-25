@@ -1,0 +1,16 @@
+.logo {
+  width: 50px;
+  display: flex;
+  align-items: center; /* Center vertically */
+  justify-content: center; /* Center horizontally */
+  margin: 0 auto;
+}
+
+.header-panel {
+  height: 80px;
+  display: flex;
+  align-items: center; 
+  background-color: #005a80;
+  border-top-left-radius: 40px ;
+  border-top-right-radius: 40px ;
+}
