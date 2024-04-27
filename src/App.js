@@ -47,8 +47,8 @@ class App extends Component {
 
   render() {
     const { isLoggedIn, loading } = this.state;
-
-    if (!isLoggedIn && loading) {
+    const user = localStorage.getItem("user");
+    if (!isLoggedIn && loading && user==null) {
       return <Login onLoginSuccess={this.handleLogin} />;
     }
 
@@ -58,12 +58,7 @@ class App extends Component {
           <Header />
         </header>
         <div className='content'>
-          <div className='side-bar'>
             <Navbar />
-          </div>
-          <div className="main-content">
-            {/* Main content goes here */}
-          </div>
         </div>
         <footer className='footer'>
           <Footer />
