@@ -10,21 +10,34 @@ import Class from '../../img/icon-navbar/school.png'
 import Calendar from '../../img/icon-navbar/calendar_today.png'
 import UserList from '../../img/icon-navbar/group.png'
 import Folder from '../../img/icon-navbar/Folder.png'
-import AuthService from "../../services/auth.service";
+import ListUser from "../ListUser";
 import 'bootstrap'
+import { Link,BrowserRouter } from "react-router-dom";
 
 
 
 const Side = () => {
   const [content, setContent] = useState(null);
 
+  const renderContent = () => {
+    switch (content) {
+      case 'User List':
+        return <ListUser />;
+      // Add other cases for each content type...
+      default:
+        return null;
+    }
+  };
+
   const handleItemClick = (content) => {
     setContent(content);
   };
+
+  
   return (
-    <div>
-      <div>
-        <Sidebar className="nav-bar">
+    <div className='container-navbar'>
+      <div className="nav-bar">
+        <Sidebar >
           <Menu>
             <MenuItem onClick={() => handleItemClick('Home')}> <><img src={Home} alt="Logo" /> <span className="label-nav">Home</span> </> </MenuItem>
             
@@ -55,7 +68,7 @@ const Side = () => {
         </Sidebar>
       </div>
       <div className="main-content">
-      {content}
+        {renderContent()}
       </div>
     </div>
     

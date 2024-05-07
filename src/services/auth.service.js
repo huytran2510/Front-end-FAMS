@@ -9,14 +9,16 @@ class AuthService {
                 password
             })
             .then(response => {
-                if (response.data.accessToken) {
-                    localStorage.setItem("user", JSON.stringify(response.data));
+                var tokenResponse = response.data;
+                var tokenAccess = tokenResponse.replace('Bearer ','');
+                if (tokenAccess) {
+                    localStorage.setItem("user", JSON.stringify(tokenAccess));
                 }
-                return response.data;
+                return tokenResponse;
             });
     }
 
-    getCurrentUser() {
+    async getCurrentUser() {
         return JSON.parse(localStorage.getItem('user'));
     }
 }
