@@ -46,7 +46,6 @@ export default class Login extends Component {
         try {
             const response = await this.authService.login(username, password); // Call login function from authService
             console.log('Login successful:', response);
-            localStorage.setItem("user",username);
             this.setState({ isLoggedIn: true, loading: false });
             this.props.onLoginSuccess();
         } catch (error) {

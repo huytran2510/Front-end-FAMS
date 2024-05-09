@@ -8,29 +8,7 @@ import 'bootstrap'
 import '/node_modules/bootstrap/dist/css/bootstrap.min.css';
 import Login from './component/Login'
 
-// const App = () => {
-//   return (
-//     <div className="app-container">
-//       <header className='header'>
-//         <Header />
-//       </header>
-//       <div className='content'>
-//         <div className='side-bar'>
-//           <Navbar />
-//         </div>
-//         <div className="main-content">
-//           {/* Main content goes here */}
-//         </div>
-//       </div>
-//       <footer className='footer' >
-//         <Footer />
-//       </footer>
-//     </div>
-//     <Login></Login>
-//   );
-// };
 
-// export default App;
 
 class App extends Component {
   constructor(props) {
@@ -48,9 +26,9 @@ class App extends Component {
   render() {
     const { isLoggedIn, loading } = this.state;
     const user = localStorage.getItem("user");
-    if (!isLoggedIn && loading && user==null) {
-      return <Login onLoginSuccess={this.handleLogin} />;
-    }
+    // if (!isLoggedIn && loading && user==null) {
+    //   return <Login onLoginSuccess={this.handleLogin} />;
+    // }
 
     return (
       <div className="app-container">
