@@ -1,16 +1,17 @@
 import React, { useState } from 'react';
 import "../../css/navbar.css"; // Import CSS for styling
 import { Sidebar, Menu, MenuItem, SubMenu } from "react-pro-sidebar";
-import Navbar from 'react-bootstrap/Navbar';
-// import "react-pro-sidebar/dist/css/styles.css"; // Import sidebar CSS
 import Home from '../../img/icon-navbar/home.png'
 import Book from '../../img/icon-navbar/book-open.png'
 import Training from '../../img/icon-navbar/biotech.png'
 import Class from '../../img/icon-navbar/school.png'
 import Calendar from '../../img/icon-navbar/calendar_today.png'
 import UserList from '../../img/icon-navbar/group.png'
+import ListUserPerminssion from "../pages/User/ListUserPerminssion";
+import ListTrainingProgram from "../pages/trainingProgram/ListTrainingProgram";
+
 import Folder from '../../img/icon-navbar/Folder.png'
-import ListUser from "../ListUser";
+import ListUser from "../pages/User/ListUser";
 import 'bootstrap'
 import { Link,BrowserRouter } from "react-router-dom";
 
@@ -24,6 +25,10 @@ const Side = () => {
       case 'User List':
         return <ListUser />;
       // Add other cases for each content type...
+      case 'User Permission' :
+        return <ListUserPerminssion />;
+      case 'View Program' :
+          return <ListTrainingProgram />;
       default:
         return null;
     }

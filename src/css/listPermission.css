@@ -1,0 +1,9 @@
+.updatePermission {
+    background-color: #2D3748;
+    border: #223047;
+    
+}
+
+.updatePermission:hover {
+    background-color: #223047;
+}
